@@ -1,0 +1,18 @@
+<!-- staff_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Staff List{% endblock %}
+
+{% block content %}
+    <h1>Staff List</h1>
+    <ul>
+        {% for staff in staff_list %}
+            <li>{{ staff.user.username }} - {{ staff.role }}</li>
+            <ul>
+                <li><a href="{% url 'edit_staff' staff.id %}">Edit</a></li>
+                <li><a href="{% url 'delete_staff' staff.id %}">Delete</a></li>
+            </ul>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_staff' %}">Add Staff</a>
+{% endblock %}

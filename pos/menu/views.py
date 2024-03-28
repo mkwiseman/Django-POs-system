@@ -12,6 +12,7 @@ def menu_management(request):
 
 def add_menu_item(request):
     if request.method == 'POST':
+        pass
         # Process form data and add menu item
         # Redirect to menu management page after adding
     else:
