@@ -1,0 +1,15 @@
+<!-- templates/menu/add_menu_item.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Menu Item</title>
+</head>
+<body>
+    <h1>Add Menu Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Form fields for adding a menu item -->
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
