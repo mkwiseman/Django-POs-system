@@ -1,4 +1,4 @@
-<!-- templates/menu/menu_management.html -->
+<!-- menu_management.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +12,14 @@
             <ul>
                 {% for item in category.menuitem_set.all %}
                     <li>{{ item.name }} - ${{ item.price }}</li>
+                    <ul>
+                        <li><a href="{% url 'edit_menu_item' item.id %}">Edit</a></li>
+                        <li><a href="{% url 'delete_menu_item' item.id %}">Delete</a></li>
+                    </ul>
                 {% endfor %}
             </ul>
         {% endfor %}
     </ul>
-    <a href="">Add Menu Item</a>
+    <a href="{% url 'add_menu_item' %}">Add Menu Item</a>
 </body>
 </html>
